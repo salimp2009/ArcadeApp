@@ -10,8 +10,10 @@ public:
 	
 	inline void SetX(int _x) { x = _x; }
 	inline void SetY(int _y) { x = _y; }
-	inline float GetX(int _x) { return x ;}
-	inline float GetY(int _x) { return y; }
+	inline float GetX() { return x ;}
+	inline float GetY() { return y; }
+
+	friend std::ostream& operator<<(std::ostream& os, const Vec2D& vec);
 
 private:
 	float x, y;

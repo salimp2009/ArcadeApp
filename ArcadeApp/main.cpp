@@ -7,5 +7,7 @@ int main()
 	std::cout << "main is ready....." << '\n';
 	Vec2D vec2{ 20, 30 };
 
+	std::cout << vec2 << '\n';
+
 	return 0;
 }   
