@@ -145,9 +145,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Util\Utils.cpp" />
     <ClCompile Include="Util\Vec2d.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Util\Utils.h" />
     <ClInclude Include="Util\Vec2d.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
