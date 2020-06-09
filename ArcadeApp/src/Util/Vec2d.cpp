@@ -1,5 +1,6 @@
 #include "Vec2d.h"
 
+const Vec2D Vec2D::Zero{ 0.0f, 0.0f };
 
 std::ostream& operator<<(std::ostream& os, const Vec2D& vec){
 	return os <<vec.x<<","<<vec.y<<'\n';
@@ -63,11 +64,55 @@ Vec2D operator*(float scale, const Vec2D& vec)
 // square magnitude
 float Vec2D::Mag2() const
 {
-	return x * x + y * y;
+	return Dot(*this);
 }
 
 // magnitude
 float Vec2D::Mag() const
 {
 	return std::sqrt(Mag2());
+}
+
+
+Vec2D Vec2D::GetUnitVec() const
+{
+	float mag = Mag();
+	if (mag > EPSILON) return *this/mag;
+
+	return Vec2D::Zero;
+}
+Vec2D& Vec2D::Normalize()
+{
+	float mag = Mag();
+	if (mag > EPSILON) 
+		*this /= mag;
+	return *this;
+}
+
+float Vec2D::Distance(const Vec2D& vec) const
+{
+	return (vec-*this).Mag();
+}
+
+float Vec2D::Dot(const Vec2D& vec) const
+{
+	return  x * vec.x + y * vec.y;
+}
+
+Vec2D Vec2D::ProjectOnto(const Vec2D& vec) const
+{
+	Vec2D unitVec = vec.GetUnitVec();
+	float dot = this->Dot(unitVec);
+	return unitVec * dot;
+}
+
+float Vec2D::AngleBetween(const Vec2D& vec) const
+{
+	return std::acosf(this->GetUnitVec().Dot(vec.GetUnitVec()));
+}
+
+Vec2D Vec2D::Reflect(const Vec2D& normal) const
+{
+	// v -2 * (v Dot normal) * n
+	return *this - 2*ProjectOnto(normal);
 }

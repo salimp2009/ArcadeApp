@@ -29,5 +29,15 @@ int main()
 
 	std::cout << 2 * vec3 << '\n';
 
+	std::cout <<"unit vector of vec3= "<<vec3.GetUnitVec() << '\n';
+
+	vec3.Normalize();
+	std::cout <<"Normalized vec3= "<<vec3<< '\n';
+
+	std::cout << "vec2= " << vec2 << "\nvec1= " << vec1 << '\n';
+	std::cout << vec2.ProjectOnto(vec1) << '\n';
+
+	std::cout <<"angle between vec1 & vec2= "<< vec1.AngleBetween(vec2)<< '\n';
+
 	return 0;
 }   

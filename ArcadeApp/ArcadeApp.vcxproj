@@ -101,6 +101,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir)Util\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,13 +145,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Util\Utils.cpp" />
-    <ClCompile Include="Util\Vec2d.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Util\Utils.cpp" />
+    <ClCompile Include="src\Util\Vec2d.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Util\Utils.h" />
-    <ClInclude Include="Util\Vec2d.h" />
+    <ClInclude Include="src\Util\Utils.h" />
+    <ClInclude Include="src\Util\Vec2d.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

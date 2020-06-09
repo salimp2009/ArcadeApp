@@ -3,19 +3,27 @@
 #include<iostream>
 #include "Utils.h"
 #include <cassert>
-
+#include <cmath>
 #include "Utils.h"
+
+/// <summary>
+/// creates a vector with x,y
+/// </summary>
 
 class Vec2D
 {
 public:
+	static  const Vec2D Zero;
+public:
 	Vec2D() = default;
 	Vec2D(float valx, float valy) : x{ valx }, y{ valy } {}
 	
-	inline void SetX(float _x) { x = _x; }
-	inline void SetY(float _y) { x = _y; }
-	inline float GetX() { return x ;}
-	inline float GetY() { return y; }
+	void SetX(float _x) { x = _x; }
+	void SetY(float _y) { x = _y; }
+	float GetX() { return x ;}
+	float GetY() { return y; }
+
+	
 
 	friend std::ostream& operator<<(std::ostream& os, const Vec2D& vec);
 
@@ -36,10 +44,19 @@ public:
 	float Mag2() const;    // square magnitude
 	float Mag() const;	   // magnitude
 
+	Vec2D GetUnitVec() const;
+	Vec2D& Normalize();
+	float Distance(const Vec2D& vec) const;
+	float Dot(const Vec2D& vec) const;
+	Vec2D ProjectOnto(const Vec2D& vec) const;
+	float AngleBetween(const Vec2D& vec) const;
+	Vec2D Reflect(const Vec2D& normal) const;
+
 	friend  Vec2D operator*(float scale, const Vec2D& vec);
-
-
+	
 private:
 	float x, y;
 };
+
+//inline Vec2D Vec2D::Zero = { 0.0f, 0.0f };
 
