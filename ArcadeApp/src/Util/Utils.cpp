@@ -3,6 +3,7 @@
 
 
 
+
 bool IsEqual(float x, float y)
 {
 	return std::fabsf(x-y) < EPSILON;

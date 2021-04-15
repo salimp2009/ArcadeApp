@@ -54,9 +54,14 @@ public:
 
 	friend  Vec2D operator*(float scale, const Vec2D& vec);
 	
+	// for testing static functions only
+	static void printname();
+
 private:
 	float x, y;
 };
+
+
 
 //inline Vec2D Vec2D::Zero = { 0.0f, 0.0f };
 

@@ -6,7 +6,6 @@
 
 
 
-
 int main()
 {
 	std::cout << "main is ready....." << '\n';
@@ -26,6 +25,7 @@ int main()
 
 	vec3 *=2.2f;
 	printf("x=%.03f , y=%.03f\n", -vec3.GetX(), -vec3.GetY());
+	
 
 	std::cout << 2 * vec3 << '\n';
 
@@ -38,6 +38,8 @@ int main()
 	std::cout << vec2.ProjectOnto(vec1) << '\n';
 
 	std::cout <<"angle between vec1 & vec2= "<< vec1.AngleBetween(vec2)<< '\n';
+
+	Vec2D::printname();
 
 	return 0;
 }   

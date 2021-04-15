@@ -1,6 +1,13 @@
 #include "Vec2d.h"
 
+//
 const Vec2D Vec2D::Zero{ 0.0f, 0.0f };
+
+// STATIC; for testing only
+void Vec2D::printname()
+{
+	printf("Salim is %0.2f years old", 100.0f);
+}
 
 std::ostream& operator<<(std::ostream& os, const Vec2D& vec){
 	return os <<vec.x<<","<<vec.y<<'\n';
